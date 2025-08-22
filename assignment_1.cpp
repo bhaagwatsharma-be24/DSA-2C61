@@ -120,6 +120,25 @@ int main() {
     }
     cout << endl;
 
+    int arr1[3][3]={{1,1,1},{1,1,1},{1,1,1}};
+    int arr2[3][3]={{2,2,2},{2,2,2},{2,2,2}};
+    int arr3[3][3];
+    for (int i=0;i<3;i++){
+        for (int j=0;j<3;j++){
+            int sum=0;
+            for (int k=0;k<3;k++){
+                    sum+=arr1[i][k]*arr2[k][j];
+            }
+            arr3[i][j]=sum;
+        }
+    }
+    for (int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout << arr3[i][j]<<" ";
+        }
+        cout << endl;
+    }
+
     
     int mat[3][3] = {{2, 4, 6}, {8, 10, 12}, {14, 16, 18}};
     for (int i = 0; i < 3; i++) {
@@ -172,3 +191,4 @@ int main() {
 
     return 0;
 }
+

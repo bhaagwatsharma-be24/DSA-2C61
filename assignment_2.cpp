@@ -3,34 +3,38 @@
 #include<array>
 using namespace std;
 
-int arr[15]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+
+
+int valueSet[15]={10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150};
+
 int main(){
-    int n;
-    cout << "enter number to search(1 to 15)"<<endl;
-    cin >> n;
-    for(int i=0;i<15;i++){
-        if (arr[i]==n){
-            cout << "element found at " << i+1 <<"th position"<<endl;
+    int key;
+    cout << "Enter a number to search: " << endl;
+    cin >> key;
+
+    for(int i = 0; i < 15; i++){
+        if (valueSet[i] == key){
+            cout << "Item found at index " << i + 1 << endl;
         }
     }
-    int low=0;
-    int high=14;
 
-    while(low<high){
-        int mid=low+(high-low)/2;
-        if(arr[mid]==n){
-            cout << "element found at " << mid+1 <<"th position";
+    int lowerBound = 0;
+    int upperBound = 14;
+
+    while(lowerBound < upperBound){
+        int pivot = lowerBound + (upperBound - lowerBound) / 2;
+        if(valueSet[pivot] == key){
+            cout << "Item found at index " << pivot + 1;
             return 1;
         }
-        else if(arr[mid]>n){
-            high=mid;
+        else if(valueSet[pivot] > key){
+            upperBound = pivot;
         }
-        else if(arr[mid]<n){
-            low=mid;
+        else if(valueSet[pivot] < key){
+            lowerBound = pivot;
         }
     }
     return 0;
-
 }
 
 int arr[7]={90,34,25,12,22,11,64};
@@ -357,3 +361,4 @@ int main()
     return 0;
 
 }
+
